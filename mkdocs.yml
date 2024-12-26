@@ -1,4 +1,5 @@
 site_name: alex
 nav:
   - Home: index.md
+  - python: python.md
   - About: about.md
