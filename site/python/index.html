@@ -96,6 +96,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Обработка цифр</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -154,7 +158,63 @@ print('b')  # a+b
 <h3 id="int">int()</h3>
 <p>Функция <strong>int()</strong> преобразует строку в число ( целое число )</p>
 <h3 id="str">str()</h3>
-<p>Функция <strong>str()</strong> преобразует число в строку</p></div>
+<p>Функция <strong>str()</strong> преобразует число в строку</p>
+<h2 id="_2">Обработка цифр</h2>
+<p>Если число имеет всего две цифры</p>
+<pre><code class="language-python">print(a // 10)  # цифра 1
+print(a % 10)  # цифра 2
+</code></pre>
+<p>Три цифры</p>
+<pre><code class="language-python">print(a // 100)  # цифра 1
+print(a % 100 // 10)  # цифра 2
+print(a % 10)  # цифра 3
+</code></pre>
+<h3 id="_3">Пример</h3>
+<p>Берём число 987</p>
+<p>987 % 100 = 87</p>
+<p>87 // 10 = 8</p>
+<p>Таким образом, крайняя правая цифра всегда вычисляется как</p>
+<pre><code class="language-python">print(a % 10)
+</code></pre>
+<h3 id="_4">Алгоритм получения всех цифр</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Цифра</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1.</td>
+<td>a % 10<sup>n-0</sup> // 10<sup>n-1</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">2.</td>
+<td>a % 10<sup>n-1</sup> // 10<sup>n-2</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">3.</td>
+<td>a % 10<sup>n-2</sup> // 10<sup>n-3</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">n-2.</td>
+<td>a % 10<sup>3</sup> // 10<sup>2</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">n-1.</td>
+<td>a % 10<sup>2</sup> // 10<sup>1</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">n-0.</td>
+<td>a % 10<sup>1</sup> // 10<sup>0</sup></td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 
