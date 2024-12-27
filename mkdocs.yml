@@ -2,4 +2,5 @@ site_name: alex
 nav:
   - Home: index.md
   - python: python.md
+  - fabius: fabius.md
   - About: about.md
