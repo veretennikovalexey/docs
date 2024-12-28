@@ -92,4 +92,22 @@ print(a % 10)
 | n-1.     | a % 10<sup>2</sup> // 10<sup>1</sup>
 | n-0.     | a % 10<sup>1</sup> // 10<sup>0</sup>
 
+#### Пример
 
+```python
+abc = int(input())
+a = abc % 1000 // 100
+b = abc % 100 // 10
+c = abc % 10 // 1
+print('Сумма цифр', '=', a + b + c)
+print('Произведение цифр', '=', a * b * c)
+# Сумма цифр = <сумма цифр>
+# Произведение цифр = <произведение цифр>
+```
+
+### Пример 2
+
+```python
+def extract_digits(num):
+    return [num // 10**i % 10 for i in range(len(str(num)))][::-1]
+```
