@@ -109,5 +109,5 @@ print('Произведение цифр', '=', a * b * c)
 
 ```python
 def extract_digits(num):
-    return [num // 10**i % 10 for i in range(len(str(num)))][::-1]
+    return [num // 10 ** i % 10 for i in range(len(str(num)))][::-1]
 ```
