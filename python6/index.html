@@ -104,6 +104,29 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#float" class="nav-link">float</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Арифметические операторы</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#int-float" class="nav-link">Преобразование между int и float</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">Неявное преобразование</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">Явное преобразование</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -113,7 +136,42 @@
 <p>int, float</p>
 <h2 id="_2">Целочисленный литерал</h2>
 <pre><code class="language-python">n = 1
-</code></pre></div>
+</code></pre>
+<p>Преобразовать строку в число</p>
+<pre><code class="language-python">n = int('1')
+</code></pre>
+<p>7 операций</p>
+<pre><code class="language-python">sum = a + b
+dif = a - b
+pro = a * b
+div = a / b
+div = a // b
+mod = a % b
+exp = a ** b
+</code></pre>
+<p>При делении получается нецелое число, при делении на ноль - ошибка</p>
+<p>Можно использовать символ _ для удобной записи большого числа</p>
+<pre><code class="language-python">n = 25_000_000
+</code></pre>
+<p>Целый тип данных не ограничен размерами</p>
+<h1 id="float">float</h1>
+<pre><code class="language-python">pi = 3.1415  # литерал с плавающей точкой
+</code></pre>
+<p>Операция деления <code>/</code> всегда даёт в результате float, даже если оба операнда были int</p>
+<p>Преобразовать строку в число с плавающей точкой</p>
+<pre><code class="language-python">n = float('1') # 1.0
+</code></pre>
+<h1 id="_3">Арифметические операторы</h1>
+<p><code>+</code> <code>-</code> <code>/</code> <code>*</code> <code>**</code></p>
+<h1 id="int-float">Преобразование между int и float</h1>
+<h2 id="_4">Неявное преобразование</h2>
+<p>Тип <code>int</code> автоматически превращается в тип <code>float</code> там, где это необходимо</p>
+<h2 id="_5">Явное преобразование</h2>
+<p>Тип <code>float</code> никогда сам не преобразуется в тип <code>int</code></p>
+<p>Для превращения типа float в тип int используется <em>явное преобразование</em></p>
+<pre><code class="language-python">number_type_int = int( number_type_float )
+</code></pre>
+<p>При явном преобразовании числа после запятой просто отбрасываются и происходит необратимая потеря части информации</p></div>
             </div>
         </div>
 
