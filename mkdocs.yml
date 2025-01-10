@@ -5,6 +5,7 @@ nav:
     - Ввод-вывод данных: python.md
     - Условный оператор: python4.md 
     - Модуль math: python5.md 
-    - Типы данных: python6.md     
+    - Типы данных: python6.md  
+    - Циклы: python7.md 
   - fabius: fabius.md
   - About: about.md
