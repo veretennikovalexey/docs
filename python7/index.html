@@ -110,6 +110,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#for-range" class="nav-link">for range</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -126,10 +130,50 @@
 <pre><code>блок кода
 </code></pre>
 <p>Цикл в питоне <em>всегда</em> начинается с нуля</p>
-<p><em>Источник</em> <a href="https://stepik.org/lesson/265118/step/6?unit=246067">stepik.org</a></p>
 <pre><code class="language-python">for _ in range(5):
     print('Python - awesome!')
-</code></pre></div>
+</code></pre>
+<p><em>Источник</em> <a href="https://stepik.org/lesson/265118/step/6?unit=246067">stepik.org</a></p>
+<hr />
+<h2 id="for-range">for range</h2>
+<p><em>ниже текст сгенерирован нейросетью</em></p>
+<p><strong>Цикл <code>for</code> и функция <code>range</code> в Python</strong>  </p>
+<p><code>range</code> — это функция, которая создаёт последовательность чисел.</p>
+<p>Её часто используют в цикле <code>for</code>, чтобы выполнять повторяющиеся действия.  </p>
+<h3 id="range">Как работает <code>range</code>:</h3>
+<h4 id="1-range">1 <strong><code>range(конец)</code></strong></h4>
+<p>Создаёт последовательность от <code>0</code> до числа <code>конец</code> (не включая его).  </p>
+<pre><code class="language-python">for i in range(5):
+    print(i)
+# Вывод: 0, 1, 2, 3, 4
+</code></pre>
+<h4 id="2-range">2 <strong><code>range(начало, конец)</code></strong></h4>
+<p>Создаёт последовательность от числа <code>начало</code> до числа <code>конец</code> (не включая его).  </p>
+<pre><code class="language-python">for i in range(2, 6):
+    print(i)
+# Вывод: 2, 3, 4, 5
+</code></pre>
+<p>Количество итераций при использовании 2х параметров рассчитывается как <code>конец</code> минус <code>начало</code> <code>6 - 2 = 4</code></p>
+<p>Всего - 4 итерации</p>
+<h4 id="3-range">3 <strong><code>range(начало, конец, шаг)</code></strong></h4>
+<p>Создаёт последовательность с шагом (может быть положительным или отрицательным).  </p>
+<p>Пример с положительным шагом:  </p>
+<pre><code class="language-python">for i in range(1, 10, 2):
+    print(i)
+# Вывод: 1, 3, 5, 7, 9
+</code></pre>
+<p>Пример с отрицательным шагом:  </p>
+<pre><code class="language-python">for i in range(5, 0, -1):
+    print(i)
+# Вывод: 5, 4, 3, 2, 1
+</code></pre>
+<h3 id="_2">Отличия:</h3>
+<ul>
+<li><strong>1 параметр</strong>: считает с <code>0</code> до указанного числа.  </li>
+<li><strong>2 параметра</strong>: задаёт начало и конец.  </li>
+<li><strong>3 параметра</strong>: добавляет шаг (включая отрицательный, для обратного отсчёта).  </li>
+</ul>
+<p>Это очень удобно для создания циклов!</p></div>
             </div>
         </div>
 
