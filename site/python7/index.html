@@ -120,6 +120,11 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Обработка цифр числа</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -227,6 +232,12 @@ while text != 'stop':
 print('Сумма чисел равна', total)
 </code></pre>
 <p><em>Бесконечные</em> циклы можно прерывать с помощью оператора прерывания <code>break</code></p>
+<h1 id="_3">Обработка цифр числа</h1>
+<pre><code class="language-python">n = int(input())
+while n != 0:
+    last_digit = n % 10
+    n = n // 10
+</code></pre>
 <hr />
 <p><em>Источник</em> <a href="https://stepik.org/lesson/265118/step/6?unit=246067">stepik.org</a></p></div>
             </div>

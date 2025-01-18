@@ -126,6 +126,15 @@ print('Сумма чисел равна', total)
 
 *Бесконечные* циклы можно прерывать с помощью оператора прерывания `break`
 
+# Обработка цифр числа
+
+```python
+n = int(input())
+while n != 0:
+    last_digit = n % 10
+    n = n // 10
+```
+
 ---
 
 *Источник* [stepik.org](https://stepik.org/lesson/265118/step/6?unit=246067)
