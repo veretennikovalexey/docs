@@ -135,6 +135,37 @@ while n != 0:
     n = n // 10
 ```
 
+## break, continue
+
+Для прерывания цикла используется оператор *break*
+
+```python
+while True:
+    break
+```
+
+Для перехода к следующей итерации цикла используется оператор *continue*
+
+```python
+for i in range(10):
+    continue
+    print("никогда") # эта строка не будет выполнена
+```
+
+# else
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+for num in numbers:
+    if num == 3:
+        print("Нашли число 3!")
+        break  # Останавливаем цикл, если нашли 3
+else:
+    # Срабатывает, только если цикл не был прерван
+    print("Число 3 не найдено.")
+```
+
 ---
 
 *Источник* [stepik.org](https://stepik.org/lesson/265118/step/6?unit=246067)
