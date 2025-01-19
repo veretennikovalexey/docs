@@ -84,6 +84,42 @@ number_type_int = int( number_type_float )
 
 ## Функции min() и max()
 
+```python
+n = int(input())
+max = 0
+min = 9
+
+while n > 0:
+    digit = n % 10
+    if digit > max:
+        max = digit
+    if digit < min:
+        min = digit
+    n = n // 10
+
+print(f"Максимальная цифра равна {max}")
+print(f"Минимальная цифра равна {min}")
+```
+
+Вариант с функциями min и max
+
+```python
+n = int(input())
+max_digit = 0
+min_digit = 9
+
+while n > 0:
+    cur_digit = n % 10
+    
+    max_digit = max(max_digit, cur_digit)
+    min_digit = min(min_digit, cur_digit)
+    
+    n //= 10
+    
+print("Максимальная цифра равна", max_digit)
+print("Минимальная цифра равна", min_digit)
+```
+
 ## Функция abs()
 
 abs() - это модуль числа, т.е. его абсолютная величина
@@ -135,3 +171,7 @@ if '.' not in s:
 Если строка `s1` содержится в строке `s2`, то говорят, что строка `s1` является **подстрокой** для строки `s2`.
 
 Другими словами, оператор *in* определяет, является ли одна строка подстрокой для другой строки.
+
+---
+
+*Источник* [stepik.org](https://stepik.org/lesson/265110/step/1?unit=246058)

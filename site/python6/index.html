@@ -217,6 +217,37 @@ exp = a ** b
 <p><code>int()</code></p>
 <p><code>float()</code></p>
 <h2 id="min-max">Функции min() и max()</h2>
+<pre><code class="language-python">n = int(input())
+max = 0
+min = 9
+
+while n &gt; 0:
+    digit = n % 10
+    if digit &gt; max:
+        max = digit
+    if digit &lt; min:
+        min = digit
+    n = n // 10
+
+print(f&quot;Максимальная цифра равна {max}&quot;)
+print(f&quot;Минимальная цифра равна {min}&quot;)
+</code></pre>
+<p>Вариант с функциями min и max</p>
+<pre><code class="language-python">n = int(input())
+max_digit = 0
+min_digit = 9
+
+while n &gt; 0:
+    cur_digit = n % 10
+
+    max_digit = max(max_digit, cur_digit)
+    min_digit = min(min_digit, cur_digit)
+
+    n //= 10
+
+print(&quot;Максимальная цифра равна&quot;, max_digit)
+print(&quot;Минимальная цифра равна&quot;, min_digit)
+</code></pre>
 <h2 id="abs">Функция abs()</h2>
 <p>abs() - это модуль числа, т.е. его абсолютная величина</p>
 <h1 id="string">Строковый тип данных string</h1>
@@ -246,7 +277,9 @@ if '.' not in s:
     print('Введенная строка не содержит символа точки')
 </code></pre>
 <p>Если строка <code>s1</code> содержится в строке <code>s2</code>, то говорят, что строка <code>s1</code> является <strong>подстрокой</strong> для строки <code>s2</code>.</p>
-<p>Другими словами, оператор <em>in</em> определяет, является ли одна строка подстрокой для другой строки.</p></div>
+<p>Другими словами, оператор <em>in</em> определяет, является ли одна строка подстрокой для другой строки.</p>
+<hr />
+<p><em>Источник</em> <a href="https://stepik.org/lesson/265110/step/1?unit=246058">stepik.org</a></p></div>
             </div>
         </div>
 
