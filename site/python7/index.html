@@ -123,6 +123,15 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Обработка цифр числа</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#break-continue" class="nav-link">break, continue</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#else" class="nav-link">else</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -237,6 +246,41 @@ print('Сумма чисел равна', total)
 while n != 0:
     last_digit = n % 10
     n = n // 10
+</code></pre>
+<h2 id="break-continue">break, continue</h2>
+<p>Для прерывания цикла используется оператор <em>break</em></p>
+<pre><code class="language-python">while True:
+    break
+</code></pre>
+<p>Следующий код проверяет, число простое или не простое (составное)</p>
+<pre><code class="language-python">num = int(input())
+flag = True
+
+for i in range(2, int(num ** 0.5) + 1):
+    if num % i == 0:
+        flag = False
+        break
+
+if num &gt; 1 and flag == True:
+    print('Число простое')
+else:
+    print('Число составное')
+</code></pre>
+<p>Для перехода к следующей итерации цикла используется оператор <em>continue</em></p>
+<pre><code class="language-python">for i in range(10):
+    continue
+    print(&quot;никогда&quot;) # эта строка не будет выполнена
+</code></pre>
+<h1 id="else">else</h1>
+<pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
+
+for num in numbers:
+    if num == 3:
+        print(&quot;Нашли число 3!&quot;)
+        break  # Останавливаем цикл, если нашли 3
+else:
+    # Срабатывает, только если цикл не был прерван
+    print(&quot;Число 3 не найдено.&quot;)
 </code></pre>
 <hr />
 <p><em>Источник</em> <a href="https://stepik.org/lesson/265118/step/6?unit=246067">stepik.org</a></p></div>
