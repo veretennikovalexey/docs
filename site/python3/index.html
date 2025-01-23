@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>About - alex</title>
+        <title>Гипотеза Эйлера - alex</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -62,7 +62,7 @@
 </li>
                                     
 <li>
-    <a href="../python3/" class="dropdown-item">Гипотеза Эйлера</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Гипотеза Эйлера</a>
 </li>
                                 </ul>
                             </li>
@@ -70,7 +70,7 @@
                                 <a href="../fabius/" class="nav-link">fabius</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">About</a>
+                                <a href="../about/" class="nav-link">About</a>
                             </li>
                         </ul>
 
@@ -81,12 +81,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../fabius/" class="nav-link">
+                                <a rel="prev" href="../python7/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../fabius/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -108,7 +108,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#aboutmd" class="nav-link">about.md</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Гипотеза Эйлера</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -117,7 +117,24 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="aboutmd">about.md</h1></div>
+<h1 id="_1">Гипотеза Эйлера</h1>
+<pre><code class="language-python">import time
+
+n = 150
+
+for e in range(140, n + 1):
+    start = time.perf_counter()
+    for a in range(1, e + 1):
+        for b in range(1, a + 1):
+            for c in range(1, b + 1):
+                for d in range(1, c + 1):
+                    if a**5 + b**5 + c**5 + d**5 == e**5:
+                        print(f&quot;{a} {b} {c} {d} {e}&quot;)
+    elapsed = time.perf_counter() - start
+    print(f&quot;{e} {elapsed:.1f}&quot;)
+</code></pre>
+<hr />
+<p><em>Источник</em> <a href="https://stepik.org/lesson/298795/step/13?unit=280622">stepik.org</a></p></div>
             </div>
         </div>
 

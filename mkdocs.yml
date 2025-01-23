@@ -7,5 +7,6 @@ nav:
     - Модуль math: python5.md 
     - Типы данных: python6.md  
     - Циклы: python7.md 
+    - Гипотеза Эйлера: python3.md 
   - fabius: fabius.md
   - About: about.md
