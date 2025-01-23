@@ -112,12 +112,34 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_2" class="nav-link">Теорема Ферма</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
 <h1 id="_1">Гипотеза Эйлера</h1>
+<p>Для начала найдём решение для такого уравнения</p>
+<p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+<p>для натуральных чисел до 10</p>
+<pre><code class="language-python">n = 10
+
+for c in range(1, n + 1):
+    for a in range(1, c + 1):
+        for b in range(1, a + 1):
+            if a**2 + b**2 == c**2:
+                print(a, b, c)
+</code></pre>
+<p>Ответ:</p>
+<p>4 3 5 ( 16 + 9 = 25 )</p>
+<p>8 6 10 ( 64 + 36 = 100 )</p>
+<h1 id="_2">Теорема Ферма</h1>
+<p>a<sup>3</sup> + b<sup>3</sup> = c<sup>3</sup></p>
+<p>Согласно теореме, решений не имеет :)</p>
 <pre><code class="language-python">import time
 
 n = 150
