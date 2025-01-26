@@ -60,6 +60,10 @@
 <li>
     <a href="./" class="dropdown-item active" aria-current="page">Циклы</a>
 </li>
+                                    
+<li>
+    <a href="../python3/" class="dropdown-item">Гипотеза Эйлера</a>
+</li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -82,7 +86,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../fabius/" class="nav-link">
+                                <a rel="next" href="../python3/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -251,6 +255,20 @@ while n != 0:
 <p>Для прерывания цикла используется оператор <em>break</em></p>
 <pre><code class="language-python">while True:
     break
+</code></pre>
+<p>Следующий код проверяет, число простое или не простое (составное)</p>
+<pre><code class="language-python">num = int(input())
+flag = True
+
+for i in range(2, int(num ** 0.5) + 1):
+    if num % i == 0:
+        flag = False
+        break
+
+if num &gt; 1 and flag == True:
+    print('Число простое')
+else:
+    print('Число составное')
 </code></pre>
 <p>Для перехода к следующей итерации цикла используется оператор <em>continue</em></p>
 <pre><code class="language-python">for i in range(10):

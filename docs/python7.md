@@ -144,6 +144,24 @@ while True:
     break
 ```
 
+Следующий код проверяет, число простое или не простое (составное)
+
+```python
+num = int(input())
+flag = True
+
+for i in range(2, int(num ** 0.5) + 1):
+    if num % i == 0:
+        flag = False
+        break
+
+if num > 1 and flag == True:
+    print('Число простое')
+else:
+    print('Число составное')
+```
+
+
 Для перехода к следующей итерации цикла используется оператор *continue*
 
 ```python
