@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Условный оператор - alex</title>
+        <title>Строковый тип данных - alex</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Условный оператор</a>
+    <a href="../python4/" class="dropdown-item">Условный оператор</a>
 </li>
                                     
 <li>
@@ -66,7 +66,7 @@
 </li>
                                     
 <li>
-    <a href="../python2/" class="dropdown-item">Строковый тип данных</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Строковый тип данных</a>
 </li>
                                 </ul>
                             </li>
@@ -85,12 +85,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../python/" class="nav-link">
+                                <a rel="prev" href="../python3/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../python5/" class="nav-link">
+                                <a rel="next" href="../fabius/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -112,32 +112,24 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Условный оператор</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Строковый тип данных</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#len" class="nav-link">Длина строки len()</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#_2" class="nav-link">Цепочки сравнений</a>
+            <li class="nav-item" data-bs-level="2"><a href="#in" class="nav-link">Оператор принадлежности in</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Транзитивность</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Индексация строк []</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#_4" class="nav-link">Логические операторы</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">Укороченная схема</a>
+            <li class="nav-item" data-bs-level="2"><a href="#rangelens" class="nav-link">Итерирование строк range(len(s))</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#_6" class="nav-link">Каскадный условный оператор</a>
-              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -145,95 +137,87 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="_1">Условный оператор</h1>
-<pre><code class="language-python">if условие:
-    блок кода
+<h1 id="_1">Строковый тип данных</h1>
+<p>Для считывания строк используем функцию <code>input()</code></p>
+<pre><code class="language-python">user_name = input(&quot;Пожалуйста, введите ваше имя: &quot;)
+print(f&quot;Привет, {user_name}! Добро пожаловать!&quot;)
 </code></pre>
-<pre><code class="language-python">if условие:
-    блок кода
+<pre><code class="language-python">number1 = input(&quot;Введите первое число: &quot;)
+number2 = input(&quot;Введите второе число: &quot;)
+sum_result = float(number1) + float(number2)
+print(f&quot;Сумма чисел {number1} и {number2} равна: {sum_result}&quot;)
+</code></pre>
+<p>Функция <code>input()</code> возвращает нам строковый тип данных</p>
+<p>Используем <code>int()</code> для преобразования строки в целое число </p>
+<h2 id="len">Длина строки len()</h2>
+<pre><code class="language-python">len()
+</code></pre>
+<p>Строки можно складывать и умножать на целое число</p>
+<h2 id="in">Оператор принадлежности in</h2>
+<p>С помощью оператора <code>in</code> можно определить входит ли одна строка в другую строку</p>
+<pre><code class="language-python">print('alex' in 'alexey') # True
+</code></pre>
+<pre><code class="language-python">s = 'All you need is love'
+if 'love' in s:
+    print('❤️')
 else:
-    блок кода
+    print('💔')
+</code></pre>
+<h2 id="_2">Индексация строк []</h2>
+<p>С помощью квадратный скобок можно обратиться и получить символ строки</p>
+<pre><code class="language-python">print(&quot;Привет&quot;[2]) # и
+</code></pre>
+<p>Индексация начинается с <em>нуля</em></p>
+<p>Последний элемент имеет индекс <code>-1</code></p>
+<pre><code class="language-python">print(&quot;Привет&quot;[-1]) # т
 </code></pre>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Оператор</th>
-<th></th>
+<th>Индекс</th>
+<th>-6</th>
+<th>-5</th>
+<th>-4</th>
+<th>-3</th>
+<th>-2</th>
+<th>-1</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">=</td>
-<td><strong>оператор присваивания</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;">==</td>
-<td><strong>условный оператор</strong></td>
-</tr>
-</tbody>
-</table>
-<p>Существует 6 операторов сравнения</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Оператор</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">&gt;</td>
-<td>больше</td>
-</tr>
-<tr>
-<td style="text-align: center;">&lt;</td>
-<td>меньше</td>
-</tr>
-<tr>
-<td style="text-align: center;">&gt;=</td>
-<td>больше или равно</td>
-</tr>
-<tr>
-<td style="text-align: center;">&lt;=</td>
-<td>меньше или равно</td>
-</tr>
-<tr>
-<td style="text-align: center;">==</td>
-<td>равно</td>
-</tr>
-<tr>
-<td style="text-align: center;">!=</td>
-<td>не равно</td>
+<td>Символ</td>
+<td>П</td>
+<td>р</td>
+<td>и</td>
+<td>в</td>
+<td>е</td>
+<td>т</td>
+<td>П</td>
+<td>р</td>
+<td>и</td>
+<td>в</td>
+<td>е</td>
+<td>т</td>
 </tr>
 </tbody>
 </table>
-<h1 id="_2">Цепочки сравнений</h1>
-<pre><code class="language-python">if 1 &lt; n &lt; 11:
-    блок кода
+<h2 id="rangelens">Итерирование строк range(len(s))</h2>
+<pre><code class="language-python">s = 'Привет'
+for i in range(len(s)):
+    print(s[i])
 </code></pre>
-<pre><code class="language-python">if a == b == c:
-    блок кода
+<p>или</p>
+<pre><code class="language-python">for i in 'Привет':
+    print(i)
 </code></pre>
-<h1 id="_3">Транзитивность</h1>
-<p>Если <code>а</code> равно <code>б</code> и <code>б</code> равно <code>в</code>, значит <code>а</code> равно <code>в</code></p>
-<p>Если <code>а</code> больше <code>б</code> и <code>б</code> больше <code>в</code>, значит <code>а</code> больше <code>в</code></p>
-<p>Если <code>а</code> делится на <code>б</code> и <code>б</code> делится на <code>в</code>, значит <code>а</code> делится на <code>в</code></p>
 <hr />
-<p>Операция неравенства <code>!=</code> <em>не является</em> транзитивной</p>
-<h1 id="_4">Логические операторы</h1>
-<p>not and or</p>
-<h2 id="_5">Укороченная схема</h2>
-<p>Если условие слева от оператора <code>and</code> ложно, то условие справа не проверяется</p>
-<p>Если условие слева от оператора <code>or</code> истина - условие справа не проверяется</p>
-<h1 id="_6">Каскадный условный оператор</h1>
-<pre><code class="language-python">if условие1:
-    блок кода
-elif условие2:
-    блок кода
-...
-else:
-    блок кода
-</code></pre></div>
+<p><em>Источник</em> <a href="https://stepik.org/lesson/284101/step/1?unit=265440">stepik.org</a></p></div>
             </div>
         </div>
 
