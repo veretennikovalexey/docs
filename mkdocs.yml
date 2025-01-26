@@ -8,5 +8,6 @@ nav:
     - Типы данных: python6.md  
     - Циклы: python7.md 
     - Гипотеза Эйлера: python3.md 
+    - Строковый тип данных: python2.md
   - fabius: fabius.md
   - About: about.md
