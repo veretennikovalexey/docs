@@ -1,5 +1,83 @@
 # fabius.md
 
+## 42.1 разбиваем на субсчета (42.1.1 или 42.1.2) в зависимости от ставки НДС
+
+```
+IF !YESNO( 'Добавить субсчёт к остаткам на 42.1 в зависимости от НДС ?', TRUE )
+  RETURN
+ENDIF
+
+IF UPPER( USERNAME ) = 'ВЕРЕТЕНН'
+ELSE
+  RETURN
+ENDIF
+
+LOCAL AA, SQL, FLD, _
+FLD := ' NDS,N,5; SM,N,12,2;;
+  DEBT,C,12; DREFL1,C,4; DANAL1,N,5; DREFL2,C,4; DANAL2,N,5;;
+  KRED,C,12; KREFL1,C,4; KANAL1,N,5; KREFL2,C,4; KANAL2,N,5; '
+
+TRY
+  _ := CreateTmpFile( fld, '_', ~IsFreeDel := true )
+
+  SQL := [ SELECT /*TOP 1*/ EKSUM * ( -1 ), BKACNT, REFLANAL, ANAL, REFL, KOD ;
+    FROM MTUN1224 ;
+    WHERE BKACNT = '42.1        ' AND ;
+      REFLANAL = 'R20 ' AND ANAL > 0 AND KOD > 0 AND EKSUM > 0 ]
+  SimpleSql( [ Insert into ] + TmpFilePath( _ ) + [;
+    ( SM, DEBT, DREFL1, DANAL1, DREFL2, DANAL2 ) ] + sql, OpdataPath )
+
+  SQL := [ UPDATE _ ;
+    SET NDS = PRODNDS ;
+    FROM ] + TmpFilePath( _ ) + [ _ ;
+      LEFT OUTER JOIN R08 ON DANAL2 = KOD ;
+    WHERE DREFL2 = 'R08 '   ]
+  SIMPLESQL( SQL, REFLISPATH )
+
+  SQL := [ UPDATE _ ;
+    SET NDS = PRODNDS ;
+    FROM ] + TmpFilePath( _ ) + [ _ ;
+      LEFT OUTER JOIN R11 ON DANAL2 = KOD ;
+    WHERE DREFL2 = 'R11 '   ]
+  SIMPLESQL( SQL, REFLISPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DEBT = '42.1.1' ;
+    WHERE NDS = 10 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DEBT = '42.1.2' ;
+    WHERE NDS = 20 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ SELECT /*TOP 1*/ EKSUM, BKACNT, REFLANAL, ANAL, REFL, KOD ;
+    FROM MTUN1224 ;
+    WHERE BKACNT = '42.1        ' AND ;
+      REFLANAL = 'R20 ' AND ANAL > 0 AND KOD > 0 AND EKSUM > 0 ]
+  SimpleSql( [ Insert into ] + TmpFilePath( _ ) + [;
+    ( SM, DEBT, DREFL1, DANAL1, DREFL2, DANAL2 ) ] + sql, OpdataPath )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET KRED = '79.2' ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  fld := { 'debt', 'kred', 'drefl1', 'drefl2', 'danal1', 'danal2', 'sum' }
+  sql := [ select debt, kred, drefl1, drefl2, danal1, danal2, sm "sum";
+    from ] + TmpFilePath( _ )
+  aa := sqltoarr( sql, fld )
+
+FINALLY
+  CLOSETABLE( _ )
+END
+
+if !isempty( aa )
+  addall( 'CSP', '2', docs1->rgnum,, fld, aa )
+endif
+
+// REFL DREFL2
+```
+
 ## GETTIME()
 
 Возвращает системное время в формате числа N5.2 (ЧЧ.ММ)
