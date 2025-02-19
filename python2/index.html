@@ -132,6 +132,11 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Срезы</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -215,6 +220,38 @@ for i in range(len(s)):
 <p>или</p>
 <pre><code class="language-python">for i in 'Привет':
     print(i)
+</code></pre>
+<h1 id="_3">Срезы</h1>
+<p>Срезы (slices) в Python позволяют извлекать части последовательностей, таких как строки, списки или кортежи. Вот два простых примера использования срезов:</p>
+<h3 id="1">Пример 1: Срез списка</h3>
+<pre><code class="language-python"># Исходный список
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Срез с 2-го по 5-й элемент (индексы 2, 3, 4)
+slice_list = my_list[2:5]
+
+print(slice_list)  # Вывод: [2, 3, 4]
+</code></pre>
+<h3 id="2">Пример 2: Срез строки</h3>
+<pre><code class="language-python"># Исходная строка
+my_string = &quot;Hello, World!&quot;
+
+# Срез с 7-го по 12-й символ (индексы 7, 8, 9, 10, 11)
+slice_string = my_string[7:12]
+
+print(slice_string)  # Вывод: World
+</code></pre>
+<h3 id="_4">Пояснение:</h3>
+<ul>
+<li>Синтаксис среза: <code>[начало:конец:шаг]</code></li>
+<li><code>начало</code> — индекс, с которого начинается срез (включительно).</li>
+<li><code>конец</code> — индекс, на котором заканчивается срез (не включая этот элемент).</li>
+<li><code>шаг</code> — шаг, с которым выбираются элементы (по умолчанию 1).</li>
+</ul>
+<p>Если не указать <code>начало</code>, срез начнётся с начала последовательности.</p>
+<p>Если не указать <code>конец</code>, срез закончится в конце последовательности. Например:</p>
+<pre><code class="language-python">print(my_list[:5])  # Вывод: [0, 1, 2, 3, 4]
+print(my_list[5:])  # Вывод: [5, 6, 7, 8, 9]
 </code></pre>
 <hr />
 <p><em>Источник</em> <a href="https://stepik.org/lesson/284101/step/1?unit=265440">stepik.org</a></p></div>
