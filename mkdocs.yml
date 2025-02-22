@@ -10,4 +10,5 @@ nav:
     - Гипотеза Эйлера: python3.md 
     - Строковый тип данных: python2.md
   - fabius: fabius.md
+  - docker: docker.md
   - About: about.md
