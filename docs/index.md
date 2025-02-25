@@ -1,3 +1,11 @@
+# Ссылки
+
+## Нейросети
+
+Мистраль Франция [Лёша](https://chat.mistral.ai/) Le Cha(t) Mistral AI
+
+ANTHROP\C [Claude](https://claude.ai/)
+
 # Welcome to MkDocs
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
