@@ -1,5 +1,159 @@
 # fabius.md
 
+## Исправить субсчета 41 счёта в соответствии со ставкой НДС
+
+```
+IF !YESNO( 'Исправить субсчета 41 счёта в соответствии со ставкой НДС?', true )
+  RETURN
+ENDIF
+
+LOCAL msg, AA, FLD, SQL, _
+
+FLD := ' NDS,N,5; sm,n,14,4; AMNT,N,14,4;;
+  debt,c,12; drefl1,c,4; danal1,n,5; drefl2,c,4; danal2,n,5;;
+  kred,c,12; krefl1,c,4; kanal1,n,5; krefl2,c,4; kanal2,n,5;'
+
+// R08
+
+try
+  WAITMSG( 'Подготовка данных', msg )
+  _ := CreateTmpFile( fld, '_', ~IsFreeDel := true )
+
+  SQL := [ SELECT BKACNT, REFLANAL, ANAL, REFL, KOD, EAMNT, -EkSUM ;
+    FROM MTUN] + RET_F_EXT() + [ ;
+    WHERE LEFT( BKACNT, 4 ) = '41] + DLM + [2' AND ;
+      REFL = 'R08 ' AND KOD > 0 AND EAMNT < 0 AND ;
+      LENGTH( TRIM( BKACNT ) ) = 6 ]
+  SimpleSql( [ Insert into ] + TmpFilePath( _ ) + [( kred, krefl1, kanal1, krefl2, kanal2, AMNT, sm ) ] + sql, OpdataPath )
+
+  SQL := [ SELECT BKACNT, REFLANAL, ANAL, REFL, KOD, EAMNT, EDSUM  ;
+    FROM MTUN] + RET_F_EXT() + [ ;
+    WHERE LEFT( BKACNT, 4 ) = '41] + DLM + [2' AND ;
+      REFL = 'R08 ' AND KOD > 0 AND EAMNT >= 0 AND ;
+      LENGTH( TRIM( BKACNT ) ) = 6 ]
+  SimpleSql( [ Insert into ] + TmpFilePath( _ ) + [( kred, krefl1, kanal1, krefl2, kanal2, AMNT, sm ) ] + sql, OpdataPath )
+
+  SQL := [ UPDATE _ ;
+    SET NDS = PRODNDS ;
+    FROM ] + TmpFilePath( _ ) + [ _ ;
+      LEFT OUTER JOIN R08 ON kanal2 = KOD ]
+  SIMPLESQL( SQL, REFLISPATH )
+
+  SQL := [ DELETE ;
+    FROM ] + TmpFilePath( _ ) + [ ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [2' AND NDS = 20 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ DELETE ;
+    FROM ] + TmpFilePath( _ ) + [ ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [1' AND NDS = 10 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ DELETE ;
+    FROM ] + TmpFilePath( _ ) + [ ;
+    WHERE sm = 0 AND AMNT = 0 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DEBT = '41] + DLM + [2] + DLM + [2' ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [1' ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DEBT = '41] + DLM + [2] + DLM + [1' ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [2' ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DREFL1 = KREFL1, DANAL1 = KANAL1, DREFL2 = KREFL2, DANAL2 = KANAL2 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  fld := { 'debt', 'kred', 'drefl1', 'drefl2', 'danal1', 'danal2', 'krefl1', 'krefl2', 'kanal1', 'kanal2', 'sum', 'AMNT' }
+  sql := [ select debt, kred, drefl1, drefl2, danal1, danal2, krefl1, krefl2, kanal1, kanal2, sm "sum", AMNT from ] + TmpFilePath( _ )
+  aa := sqltoarr( sql, fld )
+
+finally
+  closetable( _ )
+  HIDEMSG( msg )
+end
+
+if !isempty( aa )
+  addall( 'CSP', '2', docs1->rgnum,, fld, aa, ~IsRepl := FALSE )
+endif
+
+// R11
+
+FLD := ' NDS,N,5; sm,n,14,4; AMNT,N,14,4;;
+  debt,c,12; drefl1,c,4; danal1,n,5; drefl2,c,4; danal2,n,5;;
+  kred,c,12; krefl1,c,4; kanal1,n,5; krefl2,c,4; kanal2,n,5;'
+
+try
+  WAITMSG( 'Подготовка данных', msg )
+  _ := CreateTmpFile( fld, '_', ~IsFreeDel := true )
+
+  SQL := [ SELECT BKACNT, REFLANAL, ANAL, REFL, KOD, EAMNT, -EkSUM ;
+    FROM MTUN] + RET_F_EXT() + [ ;
+    WHERE LEFT( BKACNT, 4 ) = '41] + DLM + [2' AND ;
+      REFL = 'R11 ' AND KOD > 0 AND EAMNT < 0 AND ;
+      LENGTH( TRIM( BKACNT ) ) = 6 ]
+  SimpleSql( [ Insert into ] + TmpFilePath( _ ) + [( kred, krefl1, kanal1, krefl2, kanal2, AMNT, sm ) ] + sql, OpdataPath )
+
+  SQL := [ SELECT BKACNT, REFLANAL, ANAL, REFL, KOD, EAMNT, EDSUM  ;
+    FROM MTUN] + RET_F_EXT() + [ ;
+    WHERE LEFT( BKACNT, 4 ) = '41] + DLM + [2' AND ;
+      REFL = 'R11 ' AND KOD > 0 AND EAMNT >= 0 AND ;
+      LENGTH( TRIM( BKACNT ) ) = 6 ]
+  SimpleSql( [ Insert into ] + TmpFilePath( _ ) + [( kred, krefl1, kanal1, krefl2, kanal2, AMNT, sm ) ] + sql, OpdataPath )
+
+  SQL := [ UPDATE _ ;
+    SET NDS = PRODNDS ;
+    FROM ] + TmpFilePath( _ ) + [ _ ;
+      LEFT OUTER JOIN R11 ON kanal2 = KOD ]
+  SIMPLESQL( SQL, REFLISPATH )
+
+  SQL := [ DELETE ;
+    FROM ] + TmpFilePath( _ ) + [ ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [2' AND NDS = 20 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ DELETE ;
+    FROM ] + TmpFilePath( _ ) + [ ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [1' AND NDS = 10 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ DELETE ;
+    FROM ] + TmpFilePath( _ ) + [ ;
+    WHERE sm = 0 AND AMNT = 0 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DEBT = '41] + DLM + [2] + DLM + [2' ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [1' ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DEBT = '41] + DLM + [2] + DLM + [1' ;
+    WHERE KRED = '41] + DLM + [2] + DLM + [2' ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  SQL := [ UPDATE ] + TmpFilePath( _ ) + [ ;
+    SET DREFL1 = KREFL1, DANAL1 = KANAL1, DREFL2 = KREFL2, DANAL2 = KANAL2 ]
+  SIMPLESQL( SQL, TEMPPATH )
+
+  fld := { 'debt', 'kred', 'drefl1', 'drefl2', 'danal1', 'danal2', 'krefl1', 'krefl2', 'kanal1', 'kanal2', 'sum', 'AMNT' }
+  sql := [ select debt, kred, drefl1, drefl2, danal1, danal2, krefl1, krefl2, kanal1, kanal2, sm "sum", AMNT from ] + TmpFilePath( _ )
+  aa := sqltoarr( sql, fld )
+
+finally
+  closetable( _ )
+  HIDEMSG( msg )
+end
+
+if !isempty( aa )
+  addall( 'CSP', '2', docs1->rgnum,, fld, aa, ~IsRepl := FALSE )
+endif
+```
+
 ## 41.2 разбиваем на субсчета (41.2.1 или 41.2.2) в зависимости от ставки НДС
 
 ```
