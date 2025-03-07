@@ -123,27 +123,27 @@ print(my_list[5:])  # Вывод: [5, 6, 7, 8, 9]
 
 Вот по одному короткому примеру для каждой функции строки в Python:
 
-1. `capitalize`:  
+`1. capitalize`:  
 ```python
 print("привет мир".capitalize())  # Вывод: Привет мир
 ```
 
-2. `swapcase`:  
+`2. swapcase`:  
 ```python
 print("ПрИвЕт МиР".swapcase())  # Вывод: пРиВеТ мИр
 ```
 
-3. `title`:  
+`3. title`:  
 ```python
 print("привет мир".title())  # Вывод: Привет Мир
 ```
 
-4. `lower`:  
+`4. lower`:  
 ```python
 print("ПРИВЕТ МИР".lower())  # Вывод: привет мир
 ```
 
-5. `upper`:  
+`5. upper`:  
 ```python
 print("привет мир".upper())  # Вывод: ПРИВЕТ МИР
 ```
