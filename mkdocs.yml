@@ -11,4 +11,5 @@ nav:
     - Строковый тип данных: python2.md
   - fabius: fabius.md
   - docker: docker.md
+  - kde: kde.md
   - About: about.md
