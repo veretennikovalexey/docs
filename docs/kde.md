@@ -94,17 +94,29 @@ Finish the installation
 
 reboot
 
-# virtualbox 
+# Открываем терминал
 
-http://download.virtualbox.org/virtualbox/
+su
 
-http://download.virtualbox.org/virtualbox/7.1.6/
+1
 
-http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+
+cd /tmp
+
+`http://download.virtualbox.org/virtualbox/`
+
+`http://download.virtualbox.org/virtualbox/7.1.6/`
+
+`http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso`
 
 wget http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso
 
+mount -o loop,ro VBoxGuestAdditions_7.1.6.iso /mnt
 
+sh /mnt/VBoxLinuxAdditions.run
+
+shutdown now
 
 
 

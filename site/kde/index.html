@@ -123,7 +123,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#virtualbox" class="nav-link">virtualbox</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Открываем терминал</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -188,11 +188,18 @@
 <p>/dev/sda</p>
 <p>Finish the installation</p>
 <p>reboot</p>
-<h1 id="virtualbox">virtualbox</h1>
-<p>http://download.virtualbox.org/virtualbox/</p>
-<p>http://download.virtualbox.org/virtualbox/7.1.6/</p>
-<p>http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso</p>
-<p>wget http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso</p></div>
+<h1 id="_1">Открываем терминал</h1>
+<p>su</p>
+<p>1</p>
+<p>sudo apt install build-essential dkms linux-headers-$(uname -r)</p>
+<p>cd /tmp</p>
+<p><code>http://download.virtualbox.org/virtualbox/</code></p>
+<p><code>http://download.virtualbox.org/virtualbox/7.1.6/</code></p>
+<p><code>http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso</code></p>
+<p>wget http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso</p>
+<p>mount -o loop,ro VBoxGuestAdditions_7.1.6.iso /mnt</p>
+<p>sh /mnt/VBoxLinuxAdditions.run</p>
+<p>shutdown now</p></div>
             </div>
         </div>
 
