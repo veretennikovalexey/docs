@@ -116,7 +116,7 @@ mount -o loop,ro VBoxGuestAdditions_7.1.6.iso /mnt
 
 sh /mnt/VBoxLinuxAdditions.run
 
-shutdown now
+sudo shutdown now
 
 
 
