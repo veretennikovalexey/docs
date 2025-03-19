@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Ввод-вывод данных - alex</title>
+        <title>kde - alex</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -38,11 +38,11 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Ввод-вывод данных</a>
+    <a href="../python/" class="dropdown-item">Ввод-вывод данных</a>
 </li>
                                     
 <li>
@@ -77,7 +77,7 @@
                                 <a href="../docker/" class="nav-link">docker</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../kde/" class="nav-link">kde</a>
+                                <a href="./" class="nav-link active" aria-current="page">kde</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../about/" class="nav-link">About</a>
@@ -91,12 +91,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../docker/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../python4/" class="nav-link">
+                                <a rel="next" href="../about/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -118,24 +118,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#-" class="nav-link">Ввод-вывод данных</a>
+            <li class="nav-item" data-bs-level="1"><a href="#kde" class="nav-link">KDE</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#print" class="nav-link">print()</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#input" class="nav-link">input()</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Целые числа</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Обработка цифр</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -143,128 +127,57 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="-">Ввод-вывод данных</h1>
-<pre><code class="language-python">name, surname = 'alex', 'vere'
-</code></pre>
-<h2 id="print">print()</h2>
-<pre><code class="language-python">print('Hello, World !')
-print()  # пустая строка
-print('Hello','World !')
-</code></pre>
-<h3 id="sep">Параметр sep</h3>
-<pre><code class="language-python">print('a', 'b', sep='+')  # a+b
-</code></pre>
-<h3 id="end">Параметр end</h3>
-<pre><code class="language-python">print('a', end='+')
-print('b')  # a+b
-</code></pre>
-<h2 id="input">input()</h2>
-<pre><code class="language-python">print('Привет,', input())
-</code></pre>
-<p>Сначала будет произведён вызов функции <code>input()</code> а уже затем будет выполнен вывод на экран "Привет, Вася"</p>
-<h2 id="_1">Целые числа</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Операция</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">**</td>
-<td>возведение в степень</td>
-</tr>
-<tr>
-<td style="text-align: center;">//</td>
-<td>целочисленное деление</td>
-</tr>
-<tr>
-<td style="text-align: center;">%</td>
-<td>остаток от деления</td>
-</tr>
-<tr>
-<td style="text-align: center;">-</td>
-<td>унарный минус</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-python">a = -1
-</code></pre>
-<h3 id="int">int()</h3>
-<p>Функция <strong>int()</strong> преобразует строку в число ( целое число )</p>
-<h3 id="str">str()</h3>
-<p>Функция <strong>str()</strong> преобразует число в строку</p>
-<h2 id="_2">Обработка цифр</h2>
-<p>Если число имеет всего две цифры</p>
-<pre><code class="language-python">print(a // 10)  # цифра 1
-print(a % 10)  # цифра 2
-</code></pre>
-<p>Три цифры</p>
-<pre><code class="language-python">print(a // 100)  # цифра 1
-print(a % 100 // 10)  # цифра 2
-print(a % 10)  # цифра 3
-</code></pre>
-<h3 id="_3">Пример</h3>
-<p>Берём число 987</p>
-<p>987 % 100 = 87</p>
-<p>87 // 10 = 8</p>
-<p>Таким образом, крайняя правая цифра всегда вычисляется как</p>
-<pre><code class="language-python">print(a % 10)
-</code></pre>
-<h3 id="_4">Алгоритм получения всех цифр</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Цифра</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1.</td>
-<td>a % 10<sup>n-0</sup> // 10<sup>n-1</sup></td>
-</tr>
-<tr>
-<td style="text-align: center;">2.</td>
-<td>a % 10<sup>n-1</sup> // 10<sup>n-2</sup></td>
-</tr>
-<tr>
-<td style="text-align: center;">3.</td>
-<td>a % 10<sup>n-2</sup> // 10<sup>n-3</sup></td>
-</tr>
-<tr>
-<td style="text-align: center;">...</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: center;">n-2.</td>
-<td>a % 10<sup>3</sup> // 10<sup>2</sup></td>
-</tr>
-<tr>
-<td style="text-align: center;">n-1.</td>
-<td>a % 10<sup>2</sup> // 10<sup>1</sup></td>
-</tr>
-<tr>
-<td style="text-align: center;">n-0.</td>
-<td>a % 10<sup>1</sup> // 10<sup>0</sup></td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5">Пример</h4>
-<pre><code class="language-python">abc = int(input())
-a = abc % 1000 // 100
-b = abc % 100 // 10
-c = abc % 10 // 1
-print('Сумма цифр', '=', a + b + c)
-print('Произведение цифр', '=', a * b * c)
-# Сумма цифр = &lt;сумма цифр&gt;
-# Произведение цифр = &lt;произведение цифр&gt;
-</code></pre>
-<h3 id="2">Пример 2</h3>
-<pre><code class="language-python">def extract_digits(num):
-    return [num // 10 ** i % 10 for i in range(len(str(num)))][::-1]
-</code></pre></div>
+<h1 id="kde">KDE</h1>
+<p>https://cdimage.debian.org/debian-cd/current/amd64/bt-cd/debian-12.10.0-amd64-netinst.iso.torrent</p>
+<p>Имя: kde</p>
+<p>Пропустить автоматическую установку</p>
+<p>Память: 1024 Мб</p>
+<p>Процессоры: 2</p>
+<p>Диск: 30 Гб</p>
+<p>Готово</p>
+<p>Настроить</p>
+<p>Общие - Дополнительно - Общий буфер обмена - Двунаправленный</p>
+<p>Дисплей - Видеопамять - 128 Мб</p>
+<p>Включить 3D-ускорение</p>
+<p>Сеть - Тип подключения - Сетевой мост</p>
+<p>ОК</p>
+<p>Запустить</p>
+<p>Graphical install</p>
+<p>English - English - Continue</p>
+<p>other - Continue</p>
+<p>Europe - Continue</p>
+<p>Russian Federation - Continue</p>
+<p>United States - en_US.UTF-8 - Continue</p>
+<p>American English - Continue</p>
+<p>Loading...</p>
+<p>Hostname: ex</p>
+<p>Root password: 1</p>
+<p>Username: al</p>
+<p>password: 1</p>
+<p>Moscow+00 - Moscow</p>
+<p>Guided - use entire disk</p>
+<p>All files in one partition</p>
+<p>Finish</p>
+<p>Yes</p>
+<p>Install the base system...</p>
+<p>Scan extra - No</p>
+<p>Russian Federation</p>
+<p>deb.debian.org</p>
+<p>Proxy - Continue</p>
+<p>Configure the package manager...</p>
+<p>Participate - No</p>
+<p>Select and install software:</p>
+<ul>
+<li>
+<p>Debian desktop environment</p>
+</li>
+<li>
+<p>KDE Plasma</p>
+</li>
+<li>
+<p>standard system utilites</p>
+</li>
+</ul></div>
             </div>
         </div>
 
