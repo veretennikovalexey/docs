@@ -94,6 +94,17 @@ Finish the installation
 
 reboot
 
+# virtualbox 
+
+http://download.virtualbox.org/virtualbox/
+
+http://download.virtualbox.org/virtualbox/7.1.6/
+
+http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso
+
+wget http://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso
+
+
 
 
 
