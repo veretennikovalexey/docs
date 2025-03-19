@@ -84,6 +84,18 @@ Select and install software:
 
 - standard system utilites
 
+...
+
+Install the GRUB boot loader - Yes
+
+/dev/sda
+
+Finish the installation
+
+reboot
+
+
+
 
 
 
