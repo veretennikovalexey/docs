@@ -58,4 +58,13 @@ sh /mnt/VBoxLinuxAdditions.run
 
 sudo shutdown now
 
+# Общие папки
+<br>
+Путь к папке: C:\Users\raide
+
+Имя папки: raide
+
+Точка подключения: /mnt/raide
+
+Авто-подключение
 
