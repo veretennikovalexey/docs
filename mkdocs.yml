@@ -12,4 +12,6 @@ nav:
   - fabius: fabius.md
   - docker: docker.md
   - kde: kde.md
+  - lxde: lxde.md
   - About: about.md
+
