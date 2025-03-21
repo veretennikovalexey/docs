@@ -2,47 +2,23 @@
 
 https://ugolok.vercel.app/books/docker/use_docker.pdf
 
-https://www.docker.com/get-started/
+docker run debian echo "Hello World"
 
-Установили docker, у vscode установили расширения
+docker run -i -t debian /bin/bash
 
-- Docker
-- Dev Containers
+exit
 
-На рабочем столе создали папку Project, внутри папки добавили 2 файла
+docker run -h CONTAINER -i -t debian /bin/bash
 
-- Dockerfile
+docker ps
 
-```
-FROM python:3.12-alpine
-ENV PYTHONUNBUFFERED=1
-WORKDIR /python-app
-COPY . .
-CMD [ "python", "project.py" ]
-```
+docker rm
 
-- project.py
+docker rm -v $(docker ps -aq -f status=exited)
 
-```python
-import time
+docker run -it --name cowsay --hostname cowsay debian bash
 
-total = 5
-count = 0
-while count < total:
-    count += 1
-    print("Line: ", count)
-    time.sleep(0.4)
-```
+apt-get update
 
-Построили образ (image) с помощью команды 
-
-`docker build . -t myapp:0.2`
-
-Создали контейнер из образа
-
-`docker run --name myprog -it myapp:0.2`
-
-Запустили уже существующий контейнер, который только что создали
-
-`docker start -i myprog`
+apt-get install -y cowsay fortune
 
