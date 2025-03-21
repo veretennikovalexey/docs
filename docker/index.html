@@ -132,40 +132,16 @@
 
 <h1 id="docker">docker</h1>
 <p>https://ugolok.vercel.app/books/docker/use_docker.pdf</p>
-<p>https://www.docker.com/get-started/</p>
-<p>Установили docker, у vscode установили расширения</p>
-<ul>
-<li>Docker</li>
-<li>Dev Containers</li>
-</ul>
-<p>На рабочем столе создали папку Project, внутри папки добавили 2 файла</p>
-<ul>
-<li>Dockerfile</li>
-</ul>
-<pre><code>FROM python:3.12-alpine
-ENV PYTHONUNBUFFERED=1
-WORKDIR /python-app
-COPY . .
-CMD [ &quot;python&quot;, &quot;project.py&quot; ]
-</code></pre>
-<ul>
-<li>project.py</li>
-</ul>
-<pre><code class="language-python">import time
-
-total = 5
-count = 0
-while count &lt; total:
-    count += 1
-    print(&quot;Line: &quot;, count)
-    time.sleep(0.4)
-</code></pre>
-<p>Построили образ (image) с помощью команды </p>
-<p><code>docker build . -t myapp:0.2</code></p>
-<p>Создали контейнер из образа</p>
-<p><code>docker run --name myprog -it myapp:0.2</code></p>
-<p>Запустили уже существующий контейнер, который только что создали</p>
-<p><code>docker start -i myprog</code></p></div>
+<p>docker run debian echo "Hello World"</p>
+<p>docker run -i -t debian /bin/bash</p>
+<p>exit</p>
+<p>docker run -h CONTAINER -i -t debian /bin/bash</p>
+<p>docker ps</p>
+<p>docker rm</p>
+<p>docker rm -v $(docker ps -aq -f status=exited)</p>
+<p>docker run -it --name cowsay --hostname cowsay debian bash</p>
+<p>apt-get update</p>
+<p>apt-get install -y cowsay fortune</p></div>
             </div>
         </div>
 
