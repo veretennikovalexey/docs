@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Циклы - alex</title>
+        <title>alpine - alex</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -58,7 +58,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Циклы</a>
+    <a href="../python7/" class="dropdown-item">Циклы</a>
 </li>
                                     
 <li>
@@ -83,7 +83,7 @@
                                 <a href="../lxde/" class="nav-link">lxde</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../alpine/" class="nav-link">alpine</a>
+                                <a href="./" class="nav-link active" aria-current="page">alpine</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../about/" class="nav-link">About</a>
@@ -97,12 +97,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../python6/" class="nav-link">
+                                <a rel="prev" href="../lxde/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../python3/" class="nav-link">
+                                <a rel="next" href="../about/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -124,34 +124,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Циклы</a>
+            <li class="nav-item" data-bs-level="1"><a href="#alpine" class="nav-link">alpine</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#for" class="nav-link">for</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#for-range" class="nav-link">for range</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#while" class="nav-link">while</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Обработка цифр числа</a>
+            <li class="nav-item" data-bs-level="1"><a href="#virtualbox" class="nav-link">VirtualBox</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#break-continue" class="nav-link">break, continue</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Запустить</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#else" class="nav-link">else</a>
-              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -159,151 +142,33 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="_1">Циклы</h1>
-<p>Одна <em>итерация</em> - это выполнение цикла 1 раз</p>
-<p>Год - это 12 итераций: январь, февраль...</p>
-<h2 id="for">for</h2>
-<pre><code class="language-python">for ii in range(10):
-    print('Python is awesome!')
-</code></pre>
-<p><strong>for</strong> название_переменной_цикла <strong>in</strong> <strong>range</strong>( количество_повторений ):</p>
-<pre><code>блок кода
-</code></pre>
-<p>Цикл в питоне <em>всегда</em> начинается с нуля</p>
-<pre><code class="language-python">for _ in range(5):
-    print('Python - awesome!')
-</code></pre>
-<hr />
-<h2 id="for-range">for range</h2>
-<p><strong>Цикл <code>for</code> и функция <code>range</code> в Python</strong>  </p>
-<p><code>range</code> — это функция, которая создаёт последовательность чисел.</p>
-<p>Её часто используют в цикле <code>for</code>, чтобы выполнять повторяющиеся действия.  </p>
-<h3 id="range">Как работает <code>range</code>:</h3>
-<h4 id="1-range">1 <strong><code>range(конец)</code></strong></h4>
-<p>Создаёт последовательность от <code>0</code> до числа <code>конец</code> (не включая его).  </p>
-<pre><code class="language-python">for i in range(5):
-    print(i)
-# Вывод: 0, 1, 2, 3, 4
-</code></pre>
-<h4 id="2-range">2 <strong><code>range(начало, конец)</code></strong></h4>
-<p>Создаёт последовательность от числа <code>начало</code> до числа <code>конец</code> (не включая его).  </p>
-<pre><code class="language-python">for i in range(2, 6):
-    print(i)
-# Вывод: 2, 3, 4, 5
-</code></pre>
-<p>Количество итераций при использовании 2х параметров рассчитывается как <code>конец</code> минус <code>начало</code> <code>6 - 2 = 4</code></p>
-<p>Всего - 4 итерации</p>
-<h4 id="3-range">3 <strong><code>range(начало, конец, шаг)</code></strong></h4>
-<p>Создаёт последовательность с шагом (может быть положительным или отрицательным).  </p>
-<p>Пример с положительным шагом:  </p>
-<pre><code class="language-python">for i in range(1, 10, 2):
-    print(i)
-# Вывод: 1, 3, 5, 7, 9
-</code></pre>
-<p>Пример с отрицательным шагом:  </p>
-<pre><code class="language-python">for i in range(5, 0, -1):
-    print(i)
-# Вывод: 5, 4, 3, 2, 1
-</code></pre>
-<h3 id="_2">Отличия:</h3>
-<ul>
-<li><strong>1 параметр</strong>: считает с <code>0</code> до указанного числа.  </li>
-<li><strong>2 параметра</strong>: задаёт начало и конец.  </li>
-<li><strong>3 параметра</strong>: добавляет шаг (включая отрицательный, для обратного отсчёта).  </li>
-</ul>
-<p>Это очень удобно для создания циклов!</p>
-<hr />
-<h2 id="while">while</h2>
-<p>Цикл <code>while</code> называют циклом с <em>предусловием</em></p>
-<p>Цикл <code>while</code> может не выполнятся ни разу</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">for</td>
-<td>повторяется определённое количество раз</td>
-<td><strong>counting</strong> loops</td>
-</tr>
-<tr>
-<td style="text-align: center;">while</td>
-<td>повторяется неопределённое количество раз ( возможно, бесконечно )</td>
-<td><strong>conditional</strong> loops</td>
-</tr>
-</tbody>
-</table>
-<p><strong>while</strong> условие:</p>
-<pre><code>блок кода
-</code></pre>
-<p>Блок кода под двоеточием с отступом называется <em>телом цикла</em></p>
-<pre><code class="language-python">i = 0
-while i &lt; 10:
-    print('Привет')
-    i += 1
-
-num = int(input())
-while num != -1:
-    print('Квадрат вашего числа равен:', num * num)
-    num = int(input())
-</code></pre>
-<p>Цикл <code>for</code> всегда можно заменить на цикл <code>while</code></p>
-<pre><code class="language-python">text = input()
-total = 0
-while text != 'stop':
-    total += int(text)
-    text = input()
-
-print('Сумма чисел равна', total)
-</code></pre>
-<p><em>Бесконечные</em> циклы можно прерывать с помощью оператора прерывания <code>break</code></p>
-<h1 id="_3">Обработка цифр числа</h1>
-<pre><code class="language-python">n = int(input())
-while n != 0:
-    last_digit = n % 10
-    n = n // 10
-</code></pre>
-<h2 id="break-continue">break, continue</h2>
-<p>Для прерывания цикла используется оператор <em>break</em></p>
-<pre><code class="language-python">while True:
-    break
-</code></pre>
-<p>Следующий код проверяет, число простое или не простое (составное)</p>
-<pre><code class="language-python">num = int(input())
-flag = True
-
-for i in range(2, int(num ** 0.5) + 1):
-    if num % i == 0:
-        flag = False
-        break
-
-if num &gt; 1 and flag == True:
-    print('Число простое')
-else:
-    print('Число составное')
-</code></pre>
-<p>Для перехода к следующей итерации цикла используется оператор <em>continue</em></p>
-<pre><code class="language-python">for i in range(10):
-    continue
-    print(&quot;никогда&quot;) # эта строка не будет выполнена
-</code></pre>
-<h1 id="else">else</h1>
-<pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
-
-for num in numbers:
-    if num == 3:
-        print(&quot;Нашли число 3!&quot;)
-        break  # Останавливаем цикл, если нашли 3
-else:
-    # Срабатывает, только если цикл не был прерван
-    print(&quot;Число 3 не найдено.&quot;)
-</code></pre>
-<hr />
-<p><em>Источник</em> <a href="https://stepik.org/lesson/265118/step/6?unit=246067">stepik.org</a></p></div>
+<h1 id="alpine">alpine</h1>
+<p><br>
+<code>https://itsfoss.com/alpine-linux-virtualbox/</code></p>
+<p><code>https://www.alpinelinux.org/downloads/</code></p>
+<p><code>https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/x86_64/alpine-virt-3.21.3-x86_64.iso</code></p>
+<p><code>https://dl-cdn.alpinelinux.org/alpine/</code></p>
+<p><code>https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/x86_64/</code></p>
+<p>alpine-virt-3.21.3-x86_64</p>
+<p>64 512 КБайт</p>
+<p><code>https://www.virtualbox.org/</code></p>
+<p><code>https://www.virtualbox.org/wiki/Downloads</code></p>
+<p><code>https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-Win.exe</code></p>
+<p><code>https://download.virtualbox.org/virtualbox/</code></p>
+<p>'https://download.virtualbox.org/virtualbox/7.1.6/'</p>
+<p>VirtualBox-7.1.6-167084-Win</p>
+<p>120 134 КБайт</p>
+<p>Oracle_VirtualBox_Extension_Pack-7.1.6</p>
+<p>22 435 КБайт</p>
+<p>Версия 7.1.6r167084<br><br></p>
+<h1 id="virtualbox">VirtualBox</h1>
+<p><br>
+Создать</p>
+<p>Имя: Alpine Linux</p>
+<p>Диск: 25 ГБайт</p>
+<p>Видеопамять: 128 МБайт
+<br><br></p>
+<h2 id="_1">Запустить</h2></div>
             </div>
         </div>
 
