@@ -135,6 +135,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Изъять диск из виртуального привода</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -168,7 +172,49 @@
 <p>Диск: 25 ГБайт</p>
 <p>Видеопамять: 128 МБайт
 <br><br></p>
-<h2 id="_1">Запустить</h2></div>
+<h2 id="_1">Запустить</h2>
+<p><br>
+root</p>
+<p>setup-alpine</p>
+<p>us</p>
+<p>us</p>
+<p>workhost</p>
+<p>Interface: Enter 3 раза</p>
+<p>Password: 1</p>
+<p>Timezone: Europe Moscow</p>
+<p>Proxy: Enter 2 раза</p>
+<p>APK Mirror: f</p>
+<p>User: alex</p>
+<p>Full name: Enter</p>
+<p>Password: 1</p>
+<p>ssh: Enter 2 раза</p>
+<p>Disk: ?</p>
+<p>sda</p>
+<p>sys</p>
+<p>y</p>
+<p>poweroff
+<br><br></p>
+<h2 id="_2">Изъять диск из виртуального привода</h2>
+<p><br>
+apk add nano</p>
+<p>groups alex</p>
+<p><code>adduser &lt;your-username&gt; wheel</code></p>
+<p>cat /etc/doas.d/doas.conf</p>
+<p>permit persist :wheel</p>
+<p><code>nano /etc/doas.d/doas.conf</code></p>
+<p>По умолчанию в Alpine Linux не включён репозиторий сообщества. Но он вам понадобится для установки дополнительных пакетов.</p>
+<p>Поэтому отредактируйте файл репозиториев с помощью</p>
+<p>nano /etc/apk/repositories</p>
+<pre><code class="language-txt">#/media/cdrom/apks
+http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
+#http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
+</code></pre>
+<p>надо убрать комментарий с нижней строки</p>
+<p>(т.е. убрать #) и будет так</p>
+<pre><code class="language-txt">#/media/cdrom/apks
+http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
+http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
+</code></pre></div>
             </div>
         </div>
 

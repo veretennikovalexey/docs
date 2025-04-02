@@ -45,5 +45,78 @@ Oracle_VirtualBox_Extension_Pack-7.1.6
 Видеопамять: 128 МБайт
 <br><br>
 ## Запустить
+<br>
+root
 
+setup-alpine
+
+us
+
+us
+
+workhost
+
+Interface: Enter 3 раза
+
+Password: 1
+
+Timezone: Europe Moscow
+
+Proxy: Enter 2 раза
+
+APK Mirror: f
+
+User: alex
+
+Full name: Enter
+
+Password: 1
+
+ssh: Enter 2 раза
+
+Disk: ?
+
+sda
+
+sys
+
+y
+
+poweroff
+<br><br>
+## Изъять диск из виртуального привода
+<br>
+apk add nano
+
+groups alex
+
+`adduser <your-username> wheel`
+
+cat /etc/doas.d/doas.conf
+
+permit persist :wheel
+
+`nano /etc/doas.d/doas.conf`
+
+По умолчанию в Alpine Linux не включён репозиторий сообщества. Но он вам понадобится для установки дополнительных пакетов.
+
+Поэтому отредактируйте файл репозиториев с помощью
+
+
+nano /etc/apk/repositories
+
+```txt
+#/media/cdrom/apks
+http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
+#http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
+```
+
+надо убрать комментарий с нижней строки
+
+(т.е. убрать #) и будет так
+```txt
+#/media/cdrom/apks
+http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
+http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
+```
 
