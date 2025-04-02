@@ -13,5 +13,6 @@ nav:
   - docker: docker.md
   - kde: kde.md
   - lxde: lxde.md
+  - alpine: alpine.md
   - About: about.md
 
