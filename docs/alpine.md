@@ -120,3 +120,19 @@ http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
 http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
 ```
 
+cat /etc/apk/repositories
+<br><br>
+## setup-xorg-base
+<br>
+
+apk add xfce4 xfce4-terminal xfce4-screensaver lightdm-gtk-greeter dbus
+
+rc-service dbus start
+
+rc-update add dbus
+
+setup-devd udev
+
+rc-service lightdm start
+
+

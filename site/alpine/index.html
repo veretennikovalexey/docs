@@ -139,6 +139,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#setup-xorg-base" class="nav-link">setup-xorg-base</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -214,7 +218,16 @@ http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
 <pre><code class="language-txt">#/media/cdrom/apks
 http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
 http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
-</code></pre></div>
+</code></pre>
+<p>cat /etc/apk/repositories
+<br><br></p>
+<h2 id="setup-xorg-base">setup-xorg-base</h2>
+<p><br></p>
+<p>apk add xfce4 xfce4-terminal xfce4-screensaver lightdm-gtk-greeter dbus</p>
+<p>rc-service dbus start</p>
+<p>rc-update add dbus</p>
+<p>setup-devd udev</p>
+<p>rc-service lightdm start</p></div>
             </div>
         </div>
 
