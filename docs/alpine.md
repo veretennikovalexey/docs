@@ -142,3 +142,7 @@ rc-update add lightdm
 apk add elogind polkit-elogind
 
 reboot
+<br><br>
+# apk update
+<br>
+apk add virtualbox-guest-additions virtualbox-guest-additions-x11
