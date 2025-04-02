@@ -135,4 +135,10 @@ setup-devd udev
 
 rc-service lightdm start
 
+...
 
+rc-update add lightdm
+
+apk add elogind polkit-elogind
+
+reboot
