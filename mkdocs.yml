@@ -14,5 +14,6 @@ nav:
   - kde: kde.md
   - lxde: lxde.md
   - alpine: alpine.md
+  - ubuntu: ubuntu.md
   - About: about.md
 
