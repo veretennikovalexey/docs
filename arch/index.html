@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>alpine - alex</title>
+        <title>arch - alex</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -83,13 +83,13 @@
                                 <a href="../lxde/" class="nav-link">lxde</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">alpine</a>
+                                <a href="../alpine/" class="nav-link">alpine</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../ubuntu/" class="nav-link">ubuntu</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../arch/" class="nav-link">arch</a>
+                                <a href="./" class="nav-link active" aria-current="page">arch</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../about/" class="nav-link">About</a>
@@ -103,12 +103,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../lxde/" class="nav-link">
+                                <a rel="prev" href="../ubuntu/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../ubuntu/" class="nav-link">
+                                <a rel="next" href="../about/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -130,29 +130,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#alpine" class="nav-link">alpine</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#virtualbox" class="nav-link">VirtualBox</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Запустить</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Изъять диск из виртуального привода</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#setup-xorg-base" class="nav-link">setup-xorg-base</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#apk-update" class="nav-link">apk update</a>
+            <li class="nav-item" data-bs-level="1"><a href="#arch" class="nav-link">arch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -161,92 +139,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="alpine">alpine</h1>
-<p><br>
-<code>https://itsfoss.com/alpine-linux-virtualbox/</code></p>
-<p><code>https://www.alpinelinux.org/downloads/</code></p>
-<p><code>https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/x86_64/alpine-virt-3.21.3-x86_64.iso</code></p>
-<p><code>https://dl-cdn.alpinelinux.org/alpine/</code></p>
-<p><code>https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/x86_64/</code></p>
-<p>alpine-virt-3.21.3-x86_64</p>
-<p>64 512 КБайт</p>
-<p><code>https://www.virtualbox.org/</code></p>
-<p><code>https://www.virtualbox.org/wiki/Downloads</code></p>
-<p><code>https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-Win.exe</code></p>
-<p><code>https://download.virtualbox.org/virtualbox/</code></p>
-<p>'https://download.virtualbox.org/virtualbox/7.1.6/'</p>
-<p>VirtualBox-7.1.6-167084-Win</p>
-<p>120 134 КБайт</p>
-<p>Oracle_VirtualBox_Extension_Pack-7.1.6</p>
-<p>22 435 КБайт</p>
-<p>Версия 7.1.6r167084<br><br></p>
-<h1 id="virtualbox">VirtualBox</h1>
-<p><br>
-Создать</p>
-<p>Имя: Alpine Linux</p>
-<p>Диск: 25 ГБайт</p>
-<p>Видеопамять: 128 МБайт
-<br><br></p>
-<h2 id="_1">Запустить</h2>
-<p><br>
-root</p>
-<p>setup-alpine</p>
-<p>us</p>
-<p>us</p>
-<p>workhost</p>
-<p>Interface: Enter 3 раза</p>
-<p>Password: 1</p>
-<p>Timezone: Europe Moscow</p>
-<p>Proxy: Enter 2 раза</p>
-<p>APK Mirror: f</p>
-<p>User: alex</p>
-<p>Full name: Enter</p>
-<p>Password: 1</p>
-<p>ssh: Enter 2 раза</p>
-<p>Disk: ?</p>
-<p>sda</p>
-<p>sys</p>
-<p>y</p>
-<p>poweroff
-<br><br></p>
-<h2 id="_2">Изъять диск из виртуального привода</h2>
-<p><br>
-apk add nano</p>
-<p>groups alex</p>
-<p><code>adduser &lt;your-username&gt; wheel</code></p>
-<p>cat /etc/doas.d/doas.conf</p>
-<p>permit persist :wheel</p>
-<p><code>nano /etc/doas.d/doas.conf</code></p>
-<p>По умолчанию в Alpine Linux не включён репозиторий сообщества. Но он вам понадобится для установки дополнительных пакетов.</p>
-<p>Поэтому отредактируйте файл репозиториев с помощью</p>
-<p>nano /etc/apk/repositories</p>
-<pre><code class="language-txt">#/media/cdrom/apks
-http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
-#http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
-</code></pre>
-<p>надо убрать комментарий с нижней строки</p>
-<p>(т.е. убрать #) и будет так</p>
-<pre><code class="language-txt">#/media/cdrom/apks
-http://mirror.hyperdedic.ru/alpinelinux/v3.21/main
-http://mirror.hyperdedic.ru/alpinelinux/v3.21/community
-</code></pre>
-<p>cat /etc/apk/repositories
-<br><br></p>
-<h2 id="setup-xorg-base">setup-xorg-base</h2>
-<p><br></p>
-<p>apk add xfce4 xfce4-terminal xfce4-screensaver lightdm-gtk-greeter dbus</p>
-<p>rc-service dbus start</p>
-<p>rc-update add dbus</p>
-<p>setup-devd udev</p>
-<p>rc-service lightdm start</p>
-<p>...</p>
-<p>rc-update add lightdm</p>
-<p>apk add elogind polkit-elogind</p>
-<p>reboot
-<br><br></p>
-<h1 id="apk-update">apk update</h1>
-<p><br>
-apk add virtualbox-guest-additions virtualbox-guest-additions-x11</p></div>
+<h1 id="arch">arch</h1>
+<p>archinstall</p></div>
             </div>
         </div>
 
