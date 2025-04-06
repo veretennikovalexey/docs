@@ -16,5 +16,6 @@ nav:
   - alpine: alpine.md
   - ubuntu: ubuntu.md
   - arch: arch.md
+  - psql: psql.md
   - About: about.md
 
