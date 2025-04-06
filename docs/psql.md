@@ -76,3 +76,61 @@ docker build . -t flask-back
 
 
 https://youtu.be/fdnP8i08vOk
+
+# #9 docker compose up
+
+Файл Dokerfile перемещаем внутрь папки flaskprj
+
+И создаём новый файл compose.yml
+
+```yml
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: psgr 
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=mydata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - dbnet
+  
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "127.0.0.1:8080:8080"
+    links:
+      - "postgres:db"
+    networks:
+       - dbnet
+    depends_on:
+      - postgres
+
+  webflask:
+    build: ./flaskprj
+    image: flask-back
+    container_name: flsite
+    links:
+      - "postgres:dbps"
+    networks:
+       - dbnet
+    ports:
+      - "127.0.0.1:8000:4000"
+    volumes:
+      - ./flaskprj:/app
+    depends_on:
+      - postgres    
+
+networks:
+  dbnet:
+    driver: bridge
+
+volumes:
+  postgres-data:
+
+# docker run --rm --network dbnet --link psgr:dbps --name web -dp 8000:4000 
+# -v ${PWD}/flaskprj:/app flask-back
+```

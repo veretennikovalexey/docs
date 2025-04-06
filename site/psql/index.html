@@ -137,6 +137,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#9-docker-compose-up" class="nav-link">#9 docker compose up</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -196,7 +201,60 @@ if __name__ == &quot;__main__&quot;:
 <p>Возвращаемся к файлу Dockerfile и в терминале запускаем</p>
 <p>docker build . -t flask-back</p>
 <p><code>docker run --rm --network dbnet --link psgr:dbps --name web -dp 8000:4000 -v ${PWD}/flaskprj:/app flask-back</code></p>
-<p>https://youtu.be/fdnP8i08vOk</p></div>
+<p>https://youtu.be/fdnP8i08vOk</p>
+<h1 id="9-docker-compose-up">#9 docker compose up</h1>
+<p>Файл Dokerfile перемещаем внутрь папки flaskprj</p>
+<p>И создаём новый файл compose.yml</p>
+<pre><code class="language-yml">services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: psgr 
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=mydata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - dbnet
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - &quot;127.0.0.1:8080:8080&quot;
+    links:
+      - &quot;postgres:db&quot;
+    networks:
+       - dbnet
+    depends_on:
+      - postgres
+
+  webflask:
+    build: ./flaskprj
+    image: flask-back
+    container_name: flsite
+    links:
+      - &quot;postgres:dbps&quot;
+    networks:
+       - dbnet
+    ports:
+      - &quot;127.0.0.1:8000:4000&quot;
+    volumes:
+      - ./flaskprj:/app
+    depends_on:
+      - postgres    
+
+networks:
+  dbnet:
+    driver: bridge
+
+volumes:
+  postgres-data:
+
+# docker run --rm --network dbnet --link psgr:dbps --name web -dp 8000:4000 
+# -v ${PWD}/flaskprj:/app flask-back
+</code></pre></div>
             </div>
         </div>
 
