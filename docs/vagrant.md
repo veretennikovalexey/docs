@@ -55,6 +55,9 @@ logout
 vagrant halt
 
 ```
+config.vm.box_check_update = false
+
+
 config.vm.provider "virtualbox" do |vb|
   vb.gui = true
   vb.memory = "2048"
