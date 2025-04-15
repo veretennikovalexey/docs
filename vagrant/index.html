@@ -181,7 +181,10 @@ VirtualBox-7.1.8-168469-Win.exe</p>
 <p>sudo tasksel install xfce-desktop</p>
 <p>logout</p>
 <p>vagrant halt</p>
-<pre><code>config.vm.provider &quot;virtualbox&quot; do |vb|
+<pre><code>config.vm.box_check_update = false
+
+
+config.vm.provider &quot;virtualbox&quot; do |vb|
   vb.gui = true
   vb.memory = &quot;2048&quot;
   vb.customize [&quot;modifyvm&quot;, :id, &quot;--vram&quot;, &quot;32&quot;]
