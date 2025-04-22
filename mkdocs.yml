@@ -10,7 +10,9 @@ nav:
     - Циклы: python7.md 
     - Гипотеза Эйлера: python3.md 
     - Строковый тип данных: python2.md
-  - fabius: fabius.md
+  - fabius: 
+    - GETTIME: fabius.md
+    - ZIPTOXML: fabzip.md
   - docker: docker.md
   - kde: kde.md
   - lxde: lxde.md
