@@ -1,7 +1,6 @@
 site_name: alex
 nav:
   - Home: index.md
-  - vagrant.md
   - python: 
     - Ввод-вывод данных: python.md
     - Условный оператор: python4.md 
@@ -21,4 +20,5 @@ nav:
   - arch: arch.md
   - psql: psql.md
   - About: about.md
+  - vagrant.md
 
