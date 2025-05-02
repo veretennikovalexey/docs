@@ -14,7 +14,7 @@ nav:
     - ZIPTOXML: fabzip.md
   - about:  
     - about: about/about.md
-    - alpine: alpine.md
+    - alpine: about/alpine.md
   - docker: docker.md
   - kde: kde.md
   - lxde: lxde.md
