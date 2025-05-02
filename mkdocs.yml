@@ -19,6 +19,6 @@ nav:
   - ubuntu: ubuntu.md
   - arch: arch.md
   - psql: psql.md
-  - about: about\about.md
+  - about: about/about.md
   - vagrant.md
 
