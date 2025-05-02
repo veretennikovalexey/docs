@@ -12,13 +12,14 @@ nav:
   - fabius: 
     - GETTIME: fabius.md
     - ZIPTOXML: fabzip.md
+  - about:  
+    - about: about/about.md
+    - alpine: alpine.md
   - docker: docker.md
   - kde: kde.md
   - lxde: lxde.md
-  - alpine: alpine.md
   - ubuntu: ubuntu.md
   - arch: arch.md
   - psql: psql.md
-  - about: about/about.md
   - vagrant.md
 
