@@ -18,6 +18,8 @@ Oracle VirtualBox 7.1.8 needs the Microsoft Visual C++ 2019 Redistributable Pack
 
 `ubuntu-25.04-desktop-amd64.iso.torrent`
 
+sudo passwd root
+
 # VBoxGuestAdditions
 
 su
