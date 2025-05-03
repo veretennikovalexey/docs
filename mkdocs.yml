@@ -24,4 +24,7 @@ nav:
   - vagrant.md
   - gh:  
     - gh: gh/gh.md  
+  - vb:  
+    - vb: vb/vb.md  
+
 
