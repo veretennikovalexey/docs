@@ -24,7 +24,7 @@ sudo passwd root
 
 su
 
-1
+Hisava578102
 
 sudo apt install build-essential dkms linux-headers-$(uname -r) -y
 
