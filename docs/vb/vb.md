@@ -24,7 +24,7 @@ su
 
 1
 
-sudo apt install build-essential dkms linux-headers-$(uname -r)
+sudo apt install build-essential dkms linux-headers-$(uname -r) -y
 
 cd /tmp
 
