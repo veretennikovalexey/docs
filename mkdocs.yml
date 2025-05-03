@@ -15,11 +15,13 @@ nav:
   - about:  
     - about: about/about.md
     - alpine: about/alpine.md
+    - arch:   about/arch.md
   - docker: docker.md
   - kde: kde.md
   - lxde: lxde.md
   - ubuntu: ubuntu.md
-  - arch: arch.md
   - psql: psql.md
   - vagrant.md
+  - gh:  
+    - gh: gh/gh.md  
 
