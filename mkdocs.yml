@@ -14,6 +14,8 @@ nav:
     - ZIPTOXML: fabzip.md
     - RP_00_41_43_GHC: fab_rp.md
     - ZAO: fab_zao.md
+  - fsbu25:
+    - ФСБУ 25: fsbu25.md
   - about:  
     - about: about/about.md
     - alpine: about/alpine.md
